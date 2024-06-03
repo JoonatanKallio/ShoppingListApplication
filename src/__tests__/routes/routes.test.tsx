@@ -18,9 +18,10 @@ describe('Root', () => {
         });
         const { container } = render(<RouterProvider router={router} />);
 
-        expect(getByRole(container, 'heading').textContent).toBe(
-            'Hello world!'
-        );
+        expect(
+            getByRole(container, 'heading', { name: 'Hello world!' })
+                .textContent
+        ).toBeDefined();
     });
 });
 
