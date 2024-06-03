@@ -20,7 +20,6 @@ describe('Root', () => {
 
         expect(
             getByRole(container, 'heading', { name: 'Hello world!' })
-                .textContent
         ).toBeDefined();
     });
 });
@@ -38,6 +37,8 @@ describe('ErrorPage', () => {
         });
         const { container } = render(<RouterProvider router={router} />);
 
-        expect(getByRole(container, 'heading').textContent).toBe('Oops!');
+        expect(
+            getByRole(container, 'heading', { name: 'Oopsie!' })
+        ).toBeDefined();
     });
 });
