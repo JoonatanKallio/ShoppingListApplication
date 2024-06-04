@@ -4,6 +4,13 @@
 /* ALL SCSS FILE IMPORTS */
 @import "../routes/error-page/error-page";
 
+/* BREAKPOINTS */
+$breakpoint-xs: 620px;
+$breakpoint-sm: 900px;
+$breakpoint-md: 1200px;
+$breakpoint-lg: 1800px;
+$breakpoint-xl: 2100px;
+
 /* DEFAULT STYLING */
 
 * {
@@ -23,4 +30,10 @@ body {
 
 #root {
   min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

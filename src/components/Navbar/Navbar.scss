@@ -1,0 +1,55 @@
+@import "../../styles/_config";
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--wrapper {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &--right-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--right-buttons {
+    display: none;
+  }
+
+  @media screen and (min-width: $breakpoint-xs) {
+    .navbar {
+      &--right-dropdown {
+        display: none;
+      }
+
+      &--right-buttons {
+        display: flex;
+        gap: 1rem
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    .navbar {
+      &--wrapper {
+        width: 80%;
+      }
+    }
+  }
+}
