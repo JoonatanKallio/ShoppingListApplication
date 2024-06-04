@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { getByRole, render } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
+import { Theme } from '@radix-ui/themes';
 import Root from '../../routes/root/root';
 import ErrorPage from '../../routes/error-page/error-page';
 
@@ -16,7 +17,11 @@ describe('Root', () => {
             initialEntries: ['/'],
             initialIndex: 1,
         });
-        const { container } = render(<RouterProvider router={router} />);
+        const { container } = render(
+            <Theme className="content" accentColor="indigo">
+                <RouterProvider router={router} />
+            </Theme>
+        );
 
         expect(
             getByRole(container, 'heading', { name: 'Hello world!' })
@@ -35,7 +40,11 @@ describe('ErrorPage', () => {
             initialEntries: ['/thisurlnotfound'],
             initialIndex: 1,
         });
-        const { container } = render(<RouterProvider router={router} />);
+        const { container } = render(
+            <Theme className="content" accentColor="indigo">
+                <RouterProvider router={router} />
+            </Theme>
+        );
 
         expect(
             getByRole(container, 'heading', { name: 'Oopsie!' })
